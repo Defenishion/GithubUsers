@@ -208,9 +208,8 @@ class GUsersTableViewController: UITableViewController {
             if let cell = self.tableView.cellForRowAtIndexPath(path){
 
                 let showcase = iShowcase()
-
                 showcase.titleLabel.text = "Application Options"
-                showcase.detailsLabel.text = "Click to show user followers"
+                showcase.detailsLabel.text = "Click to show user followers \n Swipe down to show pull to refresh \n Scroll down to load additional users"
 
                 showcase.delegate = self
                 showcase.singleShotId = 1
@@ -236,6 +235,7 @@ extension GUsersTableViewController:iShowcaseDelegate {
 
             if let cell = self.tableView.cellForRowAtIndexPath(path) as? GUserTableViewCell{
 
+                showcase.titleLabel.text = "Cell Options"
                 showcase.detailsLabel.text = "Click to open user profile"
 
                 showcase.singleShotId = 2
