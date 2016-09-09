@@ -79,9 +79,11 @@ class GUsersTableViewController: UITableViewController {
     func startLoad() {
 
         AnimationLoader.shared.show()
+        self.tableView.separatorStyle = .None
 
         self.loadData(reload: true) {
 
+            self.tableView.separatorStyle = .SingleLine
             AnimationLoader.shared.hide()
 
         }
