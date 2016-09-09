@@ -34,10 +34,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>iShowcase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>18ED4B8333563EF86472A9025EA20495</key>
+		<key>1003CC9551E3A60F8F2C9FD52B650E15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,7 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2DF9AEFD76D25A0E91ECCB1F172858E</key>
+		<key>8F4AF552E5806725C3B661A48D83BC20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BEECC29A87ED9D46866995B93B9397FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
+		<key>DC37072FAF0252D699624379F1829720</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC8CB18FA6F3F7468A9026500C7A72F7</key>
+		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
 		<dict>
 			<key>primary</key>
 			<true/>

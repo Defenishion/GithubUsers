@@ -6,6 +6,7 @@
 //  Copyright © 2016 Ivan Balychev. All rights reserved.
 //
 import UIKit
+import iShowcase
 import SVPullToRefreshImprove
 
 class GUsersTableViewController: UITableViewController {
@@ -116,6 +117,8 @@ class GUsersTableViewController: UITableViewController {
                 self.showError("No results found", inTableView: true)
             }
 
+            self.beginShowCase()
+
             }) { (error) in
 
                 completion?()
@@ -184,13 +187,64 @@ class GUsersTableViewController: UITableViewController {
         }
 
     }
-
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let user = self.users[indexPath.row]
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("gusers_tvc") as! GUsersTableViewController
         controller.user = user
         self.navigationController?.pushViewController(controller, animated: true)
+
+    }
+
+    //MARK: - show case
+
+    func beginShowCase() {
+
+        if let path = self.tableView.indexPathsForVisibleRows?.first {
+
+            if let cell = self.tableView.cellForRowAtIndexPath(path){
+
+                let showcase = iShowcase()
+
+                showcase.titleLabel.text = "Application Options"
+                showcase.detailsLabel.text = "Click to show user followers"
+
+                showcase.delegate = self
+                showcase.singleShotId = 1
+                showcase.type = .RECTANGLE
+
+                showcase.setupShowcaseForView(cell)
+
+                showcase.show()
+                
+            }
+            
+        }
+
+    }
+
+}
+
+extension GUsersTableViewController:iShowcaseDelegate {
+
+    func iShowcaseDismissed(showcase: iShowcase) {
+
+        if let path = self.tableView.indexPathsForVisibleRows?.first {
+
+            if let cell = self.tableView.cellForRowAtIndexPath(path) as? GUserTableViewCell{
+
+                showcase.detailsLabel.text = "Click to open user profile"
+
+                showcase.singleShotId = 2
+
+                showcase.setupShowcaseForView(cell.profile_link_button)
+                
+                showcase.show()
+                
+            }
+            
+        }
 
     }
 

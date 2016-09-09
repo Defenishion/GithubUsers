@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'GitHubUsers' do
 
+pod 'iShowcase'
 pod ‘Alamofire’
 pod ‘AlamofireObjectMapper’
 pod ‘SVPullToRefreshImprove’
