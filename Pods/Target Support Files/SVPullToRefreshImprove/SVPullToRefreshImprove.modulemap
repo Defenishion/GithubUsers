@@ -1,0 +1,6 @@
+framework module SVPullToRefreshImprove {
+  umbrella header "SVPullToRefreshImprove-umbrella.h"
+
+  export *
+  module * { export * }
+}
